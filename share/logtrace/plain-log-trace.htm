@@ -1,0 +1,321 @@
+﻿<!DOCTYPE HTML><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>plain-log-trace</title>
+    <!--mark |wiz_custom_css| for wizeditor replace it-->
+
+
+<style type="text/css" id="wiz_todo_style_id" wiz_link_version="01.00.09">.wiz-todo, .wiz-todo-img {width: 16px; height: 16px; cursor: default; padding: 0 10px 0 2px; vertical-align: -10%;-webkit-user-select: none;} .wiz-todo-label { display: inline-block; padding-top: 7px; padding-bottom: 6px; line-height: 1.5;} .wiz-todo-label-checked {  color: #666;} .wiz-todo-label-unchecked {text-decoration: initial;} .wiz-todo-completed-info {padding-left: 44px; display: inline-block; } .wiz-todo-avatar { width:20px; height: 20px; vertical-align: -20%; margin-right:10px; border-radius: 2px;} .wiz-todo-account, .wiz-todo-dt { color: #666; }</style>
+
+<style id="wiz_custom_css">        html, body {            font-size: 15px;        }        body {            font-family: Helvetica, 'Hiragino Sans GB', '微软雅黑', 'Microsoft YaHei UI', SimSun, SimHei, arial, sans-serif;            line-height: 1.6;            margin: 0;            padding: 20px 36px;            padding: 1.33rem 2.4rem;        }        h1, h2, h3, h4, h5, h6 {            margin: 20px 0 10px;            margin: 1.33rem 0 0.667rem;            padding: 0;            font-weight: bold;        }        h1 {            font-size: 21px;            font-size: 1.4rem;        }        h2 {            font-size: 20px;            font-size: 1.33rem;        }        h3 {            font-size: 18px;            font-size: 1.2rem;        }        h4 {            font-size: 17px;            font-size: 1.13rem;        }        h5 {            font-size: 15px;            font-size: 1rem;        }        h6 {            font-size: 15px;            font-size: 1rem;            color: #777777;            margin: 1rem 0;        }        div, p, ul, ol, dl, li {            margin: 0;        }        blockquote, table, pre, code {            margin: 8px 0;        }        ul, ol {            padding-left: 32px;            padding-left: 2.13rem;        }        blockquote {            padding: 0 12px;            padding: 0 0.8rem;        }        blockquote > :first-child {            margin-top: 0;        }        blockquote > :last-child {            margin-bottom: 0;        }        img {            border: 0;            max-width: 100%;            height: auto !important;            margin: 2px 0;        }        table {            border-collapse: collapse;            border: 1px solid #bbbbbb;        }        td {            padding: 4px 8px;            border-collapse: collapse;            border: 1px solid #bbbbbb;        }        @media screen and (max-width: 660px) {            body {                padding: 20px 18px;                padding: 1.33rem 1.2rem;            }        }        @media only screen and (-webkit-max-device-width: 1024px), only screen and (-o-max-device-width: 1024px), only screen and (max-device-width: 1024px), only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {            html, body {                font-size: 17px;            }            body {                line-height: 1.7;                padding: 0.75rem 0.9375rem;                color: #353c47;            }            h1 {                font-size: 2.125rem;            }            h2 {                font-size: 1.875rem;            }            h3 {                font-size: 1.625rem;            }            h4 {                font-size: 1.375rem;            }            h5 {                font-size: 1.125rem;            }            h6 {                color: inherit;            }            ul, ol {                padding-left: 2.5rem;            }            blockquote {                padding: 0 0.9375rem;            }        }</style>
+<style type="text/css" id="wiz_tmp_editor_style">
+html, body {
+    font-size: 15px;
+}
+
+body {
+    font-family: Helvetica, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;
+    line-height: 1.6;
+    color: ;
+    background-color: ;
+    margin: 0;
+    padding: 16px 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0 10px;
+    margin: 1.33rem 0 0.667rem;
+    padding: 0;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 21px;
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-size: 20px;
+    font-size: 1.33rem;
+}
+
+h3 {
+    font-size: 18px;
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 17px;
+    font-size: 1.13rem;
+}
+
+h5 {
+    font-size: 15px;
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 15px;
+    font-size: 1rem;
+    color: #777777;
+    margin: 1rem 0;
+}
+
+div, p, ul, ol, dl, li {
+    margin: 0;
+}
+blockquote, table, pre, code{
+    margin: 8px 0;
+}
+
+ul, ol {
+    padding-left: 32px;
+    padding-left: 2.13rem;
+}
+
+blockquote {
+    border-left: 4px solid #dddddd;
+    padding: 0 12px;
+    padding: 0 0.8rem;
+}
+
+blockquote > :first-child {
+    margin-top: 0;
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto !important;
+    margin: 2px 0;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #bbbbbb;
+}
+
+td {
+    padding:4px 8px;
+    border-collapse: collapse;
+    border: 1px solid #bbbbbb;
+}
+
+@media screen and (max-width: 660px) {
+    body {
+        padding: 20px 18px;
+        padding: 1.33rem 1.2rem;
+    }
+}
+
+@media only screen and (-webkit-max-device-width: 1024px), only screen and (-o-max-device-width: 1024px), only screen and (max-device-width: 1024px), only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
+    html, body {
+        font-size: 17px;
+    }
+
+    body {
+        line-height: 1.7;
+        padding: 0.75rem 0.9375rem;
+        color: #353c47;
+    }
+
+    h1 {
+        font-size: 2.125rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+    }
+
+    h3 {
+        font-size: 1.625rem;
+    }
+
+    h4 {
+        font-size: 1.375rem;
+    }
+
+    h5 {
+        font-size: 1.125rem;
+    }
+
+    h6 {
+        color: inherit;
+    }
+
+    ul, ol {
+        padding-left: 2.5rem;
+    }
+
+    blockquote {
+        padding: 0 0.9375rem;
+    }
+}
+
+</style>
+</head>
+
+<body style="" ><p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"></p><p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"></p><p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"><p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" align="center" style="text-align:center;text-indent:32.15pt;
+mso-char-indent-count:2.0"><b><span style="font-size:16.0pt;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">常用日志跟踪做法</span></b><b><span lang="EN-US" style="font-size:16.0pt"><o:p></o:p></span></b></p><p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">通常一个请求或者调用</span><span lang="EN-US">(rpc)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">会有如下图所示的处理流程，一个请求下来会调用好几个类的方法，每个方法里面又会有不同的日志打印。如果能一次把某个请求的所有日志一下都检索出来，在定位问题查看日志的时候会非常方便和快捷。</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US"><v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"><v:stroke joinstyle="miter"><v:formulas><v:f eqn="if lineDrawn pixelLineWidth 0"><v:f eqn="sum @0 1 0"><v:f eqn="sum 0 0 @1"><v:f eqn="prod @2 1 2"><v:f eqn="prod @3 21600 pixelWidth"><v:f eqn="prod @3 21600 pixelHeight"><v:f eqn="sum @0 0 1"><v:f eqn="prod @6 1 2"><v:f eqn="prod @7 21600 pixelWidth"><v:f eqn="sum @8 21600 0"><v:f eqn="prod @7 21600 pixelHeight"><v:f eqn="sum @10 21600 0"></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:formulas><v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"><o:lock v:ext="edit" aspectratio="t"></o:lock></v:path></v:stroke></v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1028" type="#_x0000_t75" style="width:218.25pt;height:207.75pt;visibility:visible;mso-wrap-style:square"><img src="plain-log-trace_files/clip_image001e7229694-3497-4215-9fbe-39dd4ef3c4e5.png" o:title=""></v:shape></span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">给每个请求分配一个唯一的请求标识符</span><span lang="EN-US">(</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">可以用</span><span lang="EN-US">UUID)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">、<b>和这个请求相关的所有日志在输出的时候都带有这个请求标识符</b></span><b><span lang="EN-US">(UUID)</span></b><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">。这样根据这个</span><span lang="EN-US">UUID</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">检索日志，就能把这个请求相关的日志都检索出来。</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:21.0pt;mso-char-indent-count:2.0"><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">怎么保证<b>这个请求相关的所有日志在输出的时候都带有同一个请求标识符</b></span><b><span lang="EN-US">(UUID)</span></b><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">：首先线程是驱动</span><span lang="EN-US">(</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">执行</span><span lang="EN-US">)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">任务</span><span lang="EN-US">(</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">代码</span><span lang="EN-US">)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">的，一个请求里的代码执行调用都会在一个线程内完成，只要把这个</span><span lang="EN-US">UUID</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">在请求处理开始之前放到</span><span lang="EN-US">ThreadLocal</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，日志输出的时候再从</span><span lang="EN-US">ThreadLocal</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">中取出来就行了，还需要注意在这个请求全部处理完后，需要清除掉</span><span lang="EN-US">ThreadLocal</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">里的内容。因为对于常见的</span><span lang="EN-US">WEB</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">请求，容器会用线程池来处理，如果某个请求处理完后不清除</span><span lang="EN-US">ThreadLocal</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的内容，可能会导致不同的请求出现相同的</span><span lang="EN-US">UUID<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">当然现有的日志系统都提供了这种机制：</span><b><span lang="EN-US">log4j</span></b><b><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的</span><span lang="EN-US">MDC</span></b><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">和</span><b><span lang="EN-US">log4j2</span></b><b><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的</span><span lang="EN-US"> ThreadContext</span></b><span lang="EN-US"><o:p></o:p></span></p><pre style="tab-stops:15.75pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:white"><span lang="EN-US">&nbsp;&nbsp; <o:p></o:p></span></pre><pre style="tab-stops:15.75pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:white"><b>代码里面调用</b><span style="font-size:10.5pt;
+mso-bidi-font-size:11.0pt;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">：</span><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></pre><pre style="tab-stops:
+33.75pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:white"><span lang="EN-US" style="font-size: 10pt;">ThreadContext.<i>put</i>(</span><b><span lang="EN-US" style="font-size:10.0pt;color:green">"invokeNo"</span></b><span lang="EN-US" style="font-size: 10pt;">,UUIDUtils.<i>getUUID</i>());<o:p></o:p></span></pre><pre style="tab-stops:33.75pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:white"><span lang="EN-US" style="font-size: 10pt;"><o:p>&nbsp;</o:p></span></pre><pre style="tab-stops:15.75pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:white"><b>日志输出的时候使用</b><b><span lang="EN-US" style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi">%X{invokeNo}</span></b><b>，来输出：</b><b><span lang="EN-US" style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></b></pre><p class="MsoNormal"><span lang="EN-US"><v:shape id="图片_x0020_3" o:spid="_x0000_i1027" type="#_x0000_t75" style="width:414.75pt;height:55.5pt;
+ visibility:visible;mso-wrap-style:square"><img src="plain-log-trace_files/clip_image0020f1c70ee-2394-4a2f-a29b-712031feb06a.png" o:title=""></v:shape></span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal"><b><span lang="EN-US" style="font-size:16.0pt">WEB</span></b><b><span style="font-size:16.0pt;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">请求做法</span></b><b><span lang="EN-US" style="font-size:16.0pt"><o:p></o:p></span></b></p><p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">写一个</span><span lang="EN-US">filter</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，进行</span><span lang="EN-US">UUID</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的分配和销毁。大概逻辑如下</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US"><v:shape id="图片_x0020_4" o:spid="_x0000_i1026" type="#_x0000_t75" style="width:414.75pt;height:179.25pt;
+ visibility:visible;mso-wrap-style:square"><img src="plain-log-trace_files/clip_image0039fe3655b-4ac6-4f3f-a3fc-7370284593f0.png" o:title=""></v:shape></span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">完整代码参照：</span><span lang="EN-US"><a href="http://yanglikun.github.io/share/logtrace/AccessLogFilter.htm">http://yanglikun.github.io/share/logtrace/AccessLogFilter.htm</a><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo1"><span lang="EN-US">①<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"></span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">清除、分配</span><span lang="EN-US">UUID<o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo1"><span lang="EN-US">②<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"></span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">继续业务逻辑处理</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo1"><span lang="EN-US">③<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"></span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">日志记录、清除</span><span lang="EN-US">UUID</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">。这里的日志记录，是记录</span><span lang="EN-US">http</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">请求的参数，不是必须的，如果记录起来，有时候在分析日志的时候会更方便，这个日志一般输出到单独的一个文件比如</span><span lang="EN-US">accessLog.log</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">。进行日志搜索的时候不用全部选择日志文件，所以就比较快。</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal"><b><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">如果出现问题进行定位的时候步骤如下：</span><span lang="EN-US"><o:p></o:p></span></b></p><p class="MsoNormal"><span lang="EN-US">1</span><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">、根据能想到的关键字（单号、电话号码、姓名），先查询一遍，找到</span><span lang="EN-US">UUID<o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US">2</span><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">、再根据</span><span lang="EN-US">UUID</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">搜索，就能搜索出所有这次请求相关的所有日志了</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal"><b><span style="font-size:16.0pt;font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">对于非</span></b><b><span lang="EN-US" style="font-size:16.0pt">WEB</span></b><b><span style="font-size:16.0pt;font-family:
+宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">请求</span></b><b><span lang="EN-US" style="font-size:16.0pt"><o:p></o:p></span></b></p><p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">比如</span><span lang="EN-US">mq</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">、</span><span lang="EN-US">jsf</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">调用等非</span><span lang="EN-US">web</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">请求，就不能用</span><span lang="EN-US">servlet</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的</span><span lang="EN-US">filter</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">来实现了，这个时候可以用</span><span lang="EN-US">spring</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的</span><span lang="EN-US">AOP</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">来定义切面（切点、增强）来实现。如下所示是基于</span><span lang="EN-US">xml</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">配置的实现</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoNormal"><span lang="EN-US"><v:shape id="图片_x0020_2" o:spid="_x0000_i1025" type="#_x0000_t75" style="width:415.5pt;height:180.75pt;
+ visibility:visible;mso-wrap-style:square"><img src="plain-log-trace_files/clip_image004addbfa90-47b7-4bff-91cd-ae45b6596a4c.png" o:title=""></v:shape></span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l1 level1 lfo2"><span lang="EN-US">①<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"></span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">这里就是我们提供的</span><span lang="EN-US">jsf</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">服务或者</span><span lang="EN-US">mq</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，也是我们这个问题的横切性关注点，这些</span><span lang="EN-US">Bean</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">方法在调用的时候都会被③中的</span><span lang="EN-US">Advice</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">所增强</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l1 level1 lfo2"><span lang="EN-US">②<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"></span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">附加到①中</span><span lang="EN-US">Bean</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">上的增强</span><span lang="EN-US">(advice)</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，是个列表可以写多个，这里只写了一个</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l1 level1 lfo2"><span lang="EN-US">③<span style="font-size: 7pt; line-height: normal; font-family: 'Times New Roman';"></span></span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">增强的功能，对应到这是分配</span><span lang="EN-US">UUID</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">和销毁</span><span lang="EN-US">UUID</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的功能</span><span lang="EN-US"><o:p></o:p></span></p><p class="MsoListParagraph" style="margin-left:18.0pt;text-indent:0cm;mso-char-indent-count:
+0"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" align="left" style="background-color: white; background-position: initial initial; background-repeat: initial initial;"><b><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;
+mso-bidi-font-family:宋体;color:green;background:#E4E4FF;mso-font-kerning:0pt">com</span></b><b><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:green;background:#EFEFEF;mso-font-kerning:0pt">.jd.travel.aop.advice.ThreadTraceAdvice</span></b><span style="font-size: 12pt; font-family: 宋体;">代码参照如下：<span lang="EN-US"><o:p></o:p></span></span></p><p class="MsoNormal" align="left" style="background-color: white; background-position: initial initial; background-repeat: initial initial;"><span lang="EN-US"><a href="http://yanglikun.github.io/share/logtrace/ThreadTraceAdvice.htm"><span style="font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt">http://yanglikun.github.io/share/logtrace/ThreadTraceAdvice.htm</span></a></span><span lang="EN-US" style="font-size: 12pt; font-family: 宋体;"><o:p></o:p></span></p></p><p></p><p></p></body></html>
