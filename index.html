@@ -1,15 +1,22 @@
 <html>
 <head>
-    <script src="1.7.1-jquery.min.js" type="text/javascript"></script>
-    <meta charset="utf-8">
-    <title>yanglikun</title>
-    <style>
-        body{
-            background: url(earth_1-jpg.jpg)  no-repeat 50% 50%;
-        }
-    </style>
+<title>JavascriptMatrixz</title>
+<script type="text/javascript" src="Matrix.class.js"></script>
 </head>
 <body>
-
+<div id="matrix"></div>
+<script type="text/javascript">
+//<![CDATA[
+var matrix = new Matrix('matrix');
+var w=window.innerWidth;
+var h=window.innerHeight;
+var cellSize=16;
+matrix.SetSize(w/cellSize,h/cellSize,cellSize);
+matrix.SetWormLengthRange(1,16);
+matrix.SetTiming(64,0,16);
+matrix.Run();
+//matrix.ShowForm();
+//]]>
+</script>
 </body>
 </html>
