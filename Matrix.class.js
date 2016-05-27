@@ -119,9 +119,11 @@ function Matrix(varName, div_id)
 			matrix_endLine.style.clear = 'both';
 			this._matrix_div.appendChild(matrix_endLine);
 		}
-		this._matrix_div.onclick = function(){eval(document.getElementById('matrix').name+'.ShowForm()');}
+		//this._matrix_div.onclick = function(){eval(document.getElementById('matrix').name+'.ShowForm()');}
+		this._matrix_div.onclick=function(){}
 		this._matrix_div.style.cursor = 'pointer';
-		this._matrix_div.title = 'Click to show configuration form';
+		//this._matrix_div.title = 'Click to show configuration form';
+				this._matrix_div.title = '';
 
 		this._intervalId = setInterval(this._varName+'.running()', this._delay);
 	}
