@@ -1,0 +1,162 @@
+﻿<!DOCTYPE HTML><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>ct-free-passwd</title>
+    <!--mark |wiz_custom_css| for wizeditor replace it-->
+
+
+<style type="text/css" id="wiz_todo_style_id" wiz_link_version="01.00.09">.wiz-todo, .wiz-todo-img {width: 16px; height: 16px; cursor: default; padding: 0 10px 0 2px; vertical-align: -10%;-webkit-user-select: none;} .wiz-todo-label { display: inline-block; padding-top: 7px; padding-bottom: 6px; line-height: 1.5;} .wiz-todo-label-checked {  color: #666;} .wiz-todo-label-unchecked {text-decoration: initial;} .wiz-todo-completed-info {padding-left: 44px; display: inline-block; } .wiz-todo-avatar { width:20px; height: 20px; vertical-align: -20%; margin-right:10px; border-radius: 2px;} .wiz-todo-account, .wiz-todo-dt { color: #666; }</style>
+
+<style id="wiz_custom_css">        html, body {            font-size: 15px;        }        body {            font-family: Helvetica, 'Hiragino Sans GB', '微软雅黑', 'Microsoft YaHei UI', SimSun, SimHei, arial, sans-serif;            line-height: 1.6;            margin: 0;            padding: 20px 36px;            padding: 1.33rem 2.4rem;        }        h1, h2, h3, h4, h5, h6 {            margin: 20px 0 10px;            margin: 1.33rem 0 0.667rem;            padding: 0;            font-weight: bold;        }        h1 {            font-size: 21px;            font-size: 1.4rem;        }        h2 {            font-size: 20px;            font-size: 1.33rem;        }        h3 {            font-size: 18px;            font-size: 1.2rem;        }        h4 {            font-size: 17px;            font-size: 1.13rem;        }        h5 {            font-size: 15px;            font-size: 1rem;        }        h6 {            font-size: 15px;            font-size: 1rem;            color: #777777;            margin: 1rem 0;        }        div, p, ul, ol, dl, li {            margin: 0;        }        blockquote, table, pre, code {            margin: 8px 0;        }        ul, ol {            padding-left: 32px;            padding-left: 2.13rem;        }        blockquote {            padding: 0 12px;            padding: 0 0.8rem;        }        blockquote > :first-child {            margin-top: 0;        }        blockquote > :last-child {            margin-bottom: 0;        }        img {            border: 0;            max-width: 100%;            height: auto !important;            margin: 2px 0;        }        table {            border-collapse: collapse;            border: 1px solid #bbbbbb;        }        td {            padding: 4px 8px;            border-collapse: collapse;            border: 1px solid #bbbbbb;        }        @media screen and (max-width: 660px) {            body {                padding: 20px 18px;                padding: 1.33rem 1.2rem;            }        }        @media only screen and (-webkit-max-device-width: 1024px), only screen and (-o-max-device-width: 1024px), only screen and (max-device-width: 1024px), only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {            html, body {                font-size: 17px;            }            body {                line-height: 1.7;                padding: 0.75rem 0.9375rem;                color: #353c47;            }            h1 {                font-size: 2.125rem;            }            h2 {                font-size: 1.875rem;            }            h3 {                font-size: 1.625rem;            }            h4 {                font-size: 1.375rem;            }            h5 {                font-size: 1.125rem;            }            h6 {                color: inherit;            }            ul, ol {                padding-left: 2.5rem;            }            blockquote {                padding: 0 0.9375rem;            }        }</style>
+<style type="text/css" id="wiz_tmp_editor_style">
+html, body {
+    font-size: 15px;
+}
+
+body {
+    font-family: Helvetica, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei UI", SimSun, SimHei, arial, sans-serif;
+    line-height: 1.6;
+    color: ;
+    background-color: ;
+    margin: 0;
+    padding: 16px 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0 10px;
+    margin: 1.33rem 0 0.667rem;
+    padding: 0;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 21px;
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-size: 20px;
+    font-size: 1.33rem;
+}
+
+h3 {
+    font-size: 18px;
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 17px;
+    font-size: 1.13rem;
+}
+
+h5 {
+    font-size: 15px;
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 15px;
+    font-size: 1rem;
+    color: #777777;
+    margin: 1rem 0;
+}
+
+div, p, ul, ol, dl, li {
+    margin: 0;
+}
+blockquote, table, pre, code{
+    margin: 8px 0;
+}
+
+ul, ol {
+    padding-left: 32px;
+    padding-left: 2.13rem;
+}
+
+blockquote {
+    border-left: 4px solid #dddddd;
+    padding: 0 12px;
+    padding: 0 0.8rem;
+}
+
+blockquote > :first-child {
+    margin-top: 0;
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto !important;
+    margin: 2px 0;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #bbbbbb;
+}
+
+td {
+    padding:4px 8px;
+    border-collapse: collapse;
+    border: 1px solid #bbbbbb;
+}
+
+@media screen and (max-width: 660px) {
+    body {
+        padding: 20px 18px;
+        padding: 1.33rem 1.2rem;
+    }
+}
+
+@media only screen and (-webkit-max-device-width: 1024px), only screen and (-o-max-device-width: 1024px), only screen and (max-device-width: 1024px), only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {
+    html, body {
+        font-size: 17px;
+    }
+
+    body {
+        line-height: 1.7;
+        padding: 0.75rem 0.9375rem;
+        color: #353c47;
+    }
+
+    h1 {
+        font-size: 2.125rem;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+    }
+
+    h3 {
+        font-size: 1.625rem;
+    }
+
+    h4 {
+        font-size: 1.375rem;
+    }
+
+    h5 {
+        font-size: 1.125rem;
+    }
+
+    h6 {
+        color: inherit;
+    }
+
+    ul, ol {
+        padding-left: 2.5rem;
+    }
+
+    blockquote {
+        padding: 0 0.9375rem;
+    }
+}
+
+</style>
+</head>
+
+<body style="" ><div>差旅系统东券免密，前端需修改点：</div><div><br></div><div>差旅现在前端的逻辑是：</div><div>1、判断是否为空</div><div>2、异步校验密码是否正确</div><div>3、提交订单</div><div><br></div><div>所以第1、2步骤前端都需要修改。添加<b>前置条件</b></div><div><br></div><div><br></div><div><b>前置条件</b>：因为差旅只会有东券或京券。不会有其它的券。所以只有在选择了京券的时候才校验密码相关的逻辑。</div><div>修改建议：增加版本，不要修改已有文件，要不然会影响线上。例如：现在是ct/<b>1.1</b>/js/....可以弄成ct/<b>1.2</b>/js/...</div><div><br></div><div><b>文件1：都两个地方，在一块</b></div><div><br></div><img src="ct-free-passwd_files/bec6d523-251d-4d02-93ae-67de90c24be9.png" border="0" alt="" name=""><div><br></div><div><br></div><div><b>文件2：有两个地方，没在一块</b><br></div><div><br></div><div><img src="ct-free-passwd_files/f2d1739e-89ef-4e39-bfde-caa71b7bfb7d.png" border="0" alt="" name=""><br></div><div><br></div><div><img src="ct-free-passwd_files/343833af-c90c-4aca-b967-f29244046fcc.png" border="0" alt="" name=""><br></div><div><br></div></body></html>
